@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitLabRest", "GitLabRest\GitLabRest.csproj", "{B9AD97D5-FD3D-4AF0-AE73-FDC5B8AAA916}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitLabRestTest", "GitLabRestTest\GitLabRestTest.csproj", "{F3A4158D-7613-4C10-B336-5E1684F7FCD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9AD97D5-FD3D-4AF0-AE73-FDC5B8AAA916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9AD97D5-FD3D-4AF0-AE73-FDC5B8AAA916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9AD97D5-FD3D-4AF0-AE73-FDC5B8AAA916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9AD97D5-FD3D-4AF0-AE73-FDC5B8AAA916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3A4158D-7613-4C10-B336-5E1684F7FCD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A4158D-7613-4C10-B336-5E1684F7FCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A4158D-7613-4C10-B336-5E1684F7FCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A4158D-7613-4C10-B336-5E1684F7FCD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

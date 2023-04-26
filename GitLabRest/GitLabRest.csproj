@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>Cap.GitLabRest</PackageId>
+        <Title>GitLabRest</Title>
+        <Authors>Jan Ruhlaender</Authors>
+        <Description>Jet another GitLab REST API Client</Description>
+        <Copyright>2023 Jan Ruhlaender</Copyright>
+    </PropertyGroup>
+
+</Project>
