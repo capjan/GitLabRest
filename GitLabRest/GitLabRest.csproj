@@ -9,6 +9,10 @@
         <Authors>Jan Ruhlaender</Authors>
         <Description>Jet another GitLab REST API Client</Description>
         <Copyright>2023 Jan Ruhlaender</Copyright>
+        <PackageProjectUrl>https://github.com/capjan/GitLabRest</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/capjan/GitLabRest</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
 </Project>
