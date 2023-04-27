@@ -30,8 +30,7 @@ public static class GitLabUtil
         if (!response.IsSuccessStatusCode)
             throw new InvalidOperationException(
                 $"Call failed with status code {response.StatusCode}: {response.ReasonPhrase}");
-        
-       var pagination = GetPaginationInfo(response);
+        var pagination = GetPaginationInfo(response);
 
         // Deserialize the response content into an array of projects
         var dataAsString = await response.Content.ReadAsStringAsync();
@@ -44,5 +43,16 @@ public static class GitLabUtil
             page: pagination.Page,
             totalPages: pagination.TotalPages,
             perPage: pagination.PerPage);
+    }
+    
+    public static async Task<T> GetSingle<T>(HttpResponseMessage response)
+    {
+        if (!response.IsSuccessStatusCode)
+            throw new InvalidOperationException(
+                $"Call failed with status code {response.StatusCode}: {response.ReasonPhrase}");
+
+        // Deserialize the response content into an array of projects
+        var dataAsString = await response.Content.ReadAsStringAsync();
+        return JsonSerializer.Deserialize<T>(dataAsString) ?? throw new InvalidCastException("failed to deserialize the content");
     }
 }

@@ -32,6 +32,20 @@ public class UnitTestPackagesApi
         Assert.NotEmpty(packages.Data);
     }
 
+    [Fact]
+    public async Task UploadFileTest()
+    {
+        var api = CreateSut();
+        var projectId = GetTestProjectId();
+
+        var tempFile = Path.GetTempFileName();
+        await File.WriteAllTextAsync(tempFile, "Hello World!");
+
+
+        var uploadedFile = await api.UploadGenericPackageFileAsync(tempFile, projectId, "Test", "1.0.0");
+        Assert.Equal(uploadedFile.FileName, Path.GetFileName(tempFile));
+    }
+
     private static GitLabPackagesApi CreateSut()
     {
         var baseUrl = Environment.GetEnvironmentVariable("GITLAB_BASE_URL");
@@ -42,6 +56,8 @@ public class UnitTestPackagesApi
 
         return new GitLabPackagesApi(baseUrl!, personalAccessToken!);
     }
+    
+    
     
     private static int GetTestProjectId()
     {

@@ -1,4 +1,5 @@
 using System.Text.Encodings.Web;
+using System.Text.Json;
 using GitLabRest.Model;
 
 namespace GitLabRest;
@@ -20,7 +21,7 @@ public class GitLabPackagesApi : GitLabApi
         return await GitLabUtil.GetPaginatedResult<GitLabPackage>(response);
     }
     
-    public async Task UploadGenericPackageFile(
+    public async Task<GitLabPackageFile> UploadGenericPackageFileAsync(
         string filePath,
         int projectId,
         string packageName,
@@ -32,15 +33,10 @@ public class GitLabPackagesApi : GitLabApi
         var fileName = Path.GetFileName(filePath).Replace(" ", "-");
         var content = new ByteArrayContent(fileData);
         
-        var apiPath = $"projects/{projectId}/packages/generic/{packageName}/{packageVersion}/{fileName}";
+        var apiPath = $"projects/{projectId}/packages/generic/{packageName}/{packageVersion}/{fileName}?select=package_file";
 
         var response = await client.PutAsync(apiPath, content);
-        var message = await response.Content.ReadAsStringAsync();
-        
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new InvalidOperationException($"Failed to upload file. StatusCode: {response.StatusCode} Message: {message} ");
-        }
+        return await GitLabUtil.GetSingle<GitLabPackageFile>(response);
     }
     
     
