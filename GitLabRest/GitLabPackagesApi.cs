@@ -27,6 +27,8 @@ public class GitLabPackagesApi : GitLabApi
         string packageName,
         string packageVersion)
     {
+        // See: https://docs.gitlab.com/ee/user/packages/generic_packages/#download-package-file
+        
         using var client = CreateHttpClient();
         
         var fileData = await File.ReadAllBytesAsync(filePath);
